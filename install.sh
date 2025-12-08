@@ -1,5 +1,5 @@
 removeInstall() {
-    sudo apt remove -y firefox-esr evolution yelp gnome-contacts gnome-weather gnome-clocks gnome-maps libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer shotwell simple-scan gnome-tour seahorse gnome-connections malcontent-gui libreoffice-common
+    sudo apt remove -y firefox-esr evolution yelp gnome-contacts gnome-weather gnome-clocks gnome-maps libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer shotwell simple-scan gnome-tour seahorse gnome-connections malcontent-gui libreoffice-common gnome-calculator
 }
 
 loadSetting() {

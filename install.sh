@@ -92,7 +92,11 @@ install_brave
 
 sudo apt update && sudo apt upgrade -y && sudo apt update
 
-install_codium
+install_codium_key
+
+sudo apt update && sudo apt upgrade -y && sudo apt update
+
+install_codium_repo
 
 sudo apt update && sudo apt upgrade -y && sudo apt update
 

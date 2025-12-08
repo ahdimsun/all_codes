@@ -1,0 +1,13 @@
+# self notes as comments
+# python virtual environment files can be ignored because anyone can recreate it by themselves using requirements.txt
+venv/
+
+# cache files of python for running faster, etc. so can be ignored as they change frequently
+__pycache__/
+*.pyc
+
+# it stores folder view preferences of macos so better be ignored now then forgetting when i might code on macos if i get rich
+.DS_Store
+
+# full form is environment variables and it holds secret settings and sensitive information and anyone wouldnt want it be seen by others
+.env

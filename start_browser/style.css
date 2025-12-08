@@ -1,0 +1,113 @@
+:root {
+  --bg-light: #f9f9fb;
+  --text-light: #1e1e1e;
+  --bg-dark: #111;
+  --text-dark: #eee;
+  --link-hover-light: #0077ff;
+  --link-hover-dark: #66aaff;
+  --font: system-ui, -apple-system, "Inter", "Segoe UI", "Noto Sans", "Ubuntu", "Cantarell", sans-serif;
+
+  color-scheme: light dark;
+}
+
+/* base font scales dynamically with system / screen size */
+html {
+  font-size: clamp(14px, 1vw + 1rem, 18px);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+  }
+  a:hover { color: var(--link-hover-dark); }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background: var(--bg-light);
+    color: var(--text-light);
+  }
+  a:hover { color: var(--link-hover-light); }
+}
+
+body {
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  width: min(95%, 1200px);
+}
+
+/* each folder = one block */
+.folder {
+  background: color-mix(in srgb, currentColor 3%, transparent);
+  border: 1px solid currentColor;
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.25rem;
+  min-height: 10rem;
+  overflow: hidden;
+  box-shadow: 0 1px 4px color-mix(in srgb, currentColor 10%, transparent);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.folder:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 8px color-mix(in srgb, currentColor 15%, transparent);
+}
+
+.folder h2 {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  opacity: 0.85;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 0.3em;
+}
+
+/* links inside each folder block */
+a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  line-height: 1.6;
+  transition: color 0.2s ease;
+  font-size: 1em;
+  word-break: break-word;
+}
+
+a img {
+  width: 1em;
+  height: 1em;
+  border-radius: 0.2em;
+  flex-shrink: 0;
+}
+
+/* slightly larger padding on touch devices */
+@media (pointer: coarse) {
+  a { padding: 0.5em 0; }
+}
+
+/* responsive fine-tuning for very small screens */
+@media (max-width: 600px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}

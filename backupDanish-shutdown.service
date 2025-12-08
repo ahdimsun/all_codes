@@ -1,0 +1,11 @@
+[Unit]
+DefaultDependencies=no
+Before=shutdown.target halt.target reboot.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/ahdimsun/Danish/Backups/backup_rsync.sh
+TimeoutStartSec=0
+
+[Install]
+WantedBy=shutdown.target halt.target reboot.target

@@ -117,7 +117,7 @@ sudo apt update && sudo apt upgrade -y && sudo apt update
 
 remove_preinstall
 
-sudo apt update && sudo apt upgrade -y && sudo apt update
+sudo apt update && sudo apt upgrade -y && sudo apt update && sudo apt autoremove
 
 load_setting_gnome
 

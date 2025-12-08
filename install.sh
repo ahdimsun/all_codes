@@ -69,3 +69,63 @@ sudo apt update
 sudo apt-get install libc6:i386 libncurses6:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386
 
 sudo apt install fonts-noto
+
+sudo virsh net-start default
+
+sudo virsh net-autostart default
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# title for gnome terminal
+set_title() {
+    echo -ne "\033]0;$1\007"
+}
+
+# remove pre installed gnome stuff on fresh install
+remove_preinstall() {
+    sudo apt remove -y gnome-contacts gnome-weather gnome-clocks gnome-maps gnome-calendar gnome-music simple-scan gnome-snapshot gnome-characters seahorse gnome-connections gnome-disk-utility baobab gnome-system-monitor gnome-logs malcontent-gui totem gnome-sound-recorder gnome-tour shotwell libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sudo apt update && sudo apt upgrade -y && sudo apt update
+
+clear
+
+remove_preinstall
+
+sudo apt autoremove -y && sudo apt update && sudo apt upgrade -y && sudo apt update
+
+clear

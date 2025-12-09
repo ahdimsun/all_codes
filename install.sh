@@ -69,9 +69,9 @@ install_android_studio() {
 }
 # && eval "$(ssh-agent -s)"
 
-sudo apt update && sudo apt upgrade -y && sudo apt update
+sudo dpkg --add-architecture i386
 
-sudo dpkg --add-architecture i386 && sudo apt update && sudo apt upgrade -y && sudo apt update
+sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y
 
 fix_grub
 
@@ -79,58 +79,34 @@ symlink_screenshot_folder
 
 install_anki
 
-sudo apt update && sudo apt upgrade -y && sudo apt update
-
 install_preinstall
 
-sudo apt update && sudo apt upgrade -y && sudo apt update
+set_git_github
 
 enable_virt_manager
 
 install_brave
 
-sudo apt update && sudo apt upgrade -y && sudo apt update
-
-install_codium_key
-
-sudo apt update && sudo apt upgrade -y && sudo apt update
-
-install_codium_repo
-
-sudo apt update && sudo apt upgrade -y && sudo apt update
+install_codium
 
 install_sync
 
-sudo apt update && sudo apt upgrade -y && sudo apt update
-
 install_flathub
-
-sudo apt update && sudo apt upgrade -y && sudo apt update
 
 install_vpn
 
 install_debinstall
 
-sudo apt update && sudo apt upgrade -y && sudo apt update
-
-install_flathub_app
-
-sudo apt update && sudo apt upgrade -y && sudo apt update
+sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y
 
 install_postinstall
 
-sudo apt update && sudo apt upgrade -y && sudo apt update
+install_flathub_app
 
 remove_preinstall
 
-sudo apt update && sudo apt upgrade -y && sudo apt update && sudo apt autoremove
-
-load_setting_gnome
-
-set_git_github
-
-sudo apt update && sudo apt upgrade -y && sudo apt update
+sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y
 
 install_android_studio
 
-sudo apt update && sudo apt upgrade -y && sudo apt update
+load_setting_gnome

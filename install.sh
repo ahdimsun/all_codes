@@ -56,10 +56,6 @@ remove_preinstall() {
     sudo apt remove -y gnome-contacts gnome-weather gnome-clocks gnome-maps gnome-calendar gnome-music simple-scan gnome-snapshot gnome-characters seahorse gnome-connections gnome-disk-utility baobab gnome-system-monitor gnome-logs malcontent-gui totem gnome-sound-recorder gnome-tour shotwell libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-common gnome-text-editor yelp firefox-esr evolution gnome-calculator
 }
 
-load_setting_gnome() {
-    dconf load / < gnome-settings-backup.ini
-}
-
 set_git_github() {
     git config --global user.name "Muhammad Danish" && git config --global user.email "ahdimsun@gmail.com" && ssh-keygen -t ed25519 -C "ahdimsun@gmail.com" -f ~/.ssh/id_ed25519 -N "" && ssh-add ~/.ssh/id_ed25519 && cat ~/.ssh/id_ed25519.pub > key.txt
 }
@@ -109,4 +105,4 @@ sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y
 
 install_android_studio
 
-load_setting_gnome
+dconf load / < gnome-settings-backup.ini
